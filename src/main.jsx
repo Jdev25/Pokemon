@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./components/css/main.css";
-import "./components/css/CardDeck.css";
+import "./components/CardDeck.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
