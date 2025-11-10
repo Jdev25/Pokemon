@@ -1,0 +1,72 @@
+[
+  {
+    "pokemon": {
+      "nombre": "Mimikyu",
+      "tipo_carta": "BASIC",
+      "hp": 70,
+      "tipo_energia_principal": "Fantasma",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/778.png",
+      "modelo": "src/models/mimikyu2.glb"
+    },
+    "ataque_principal": {
+      "nombre": "Shadow Hit",
+      "danio": 60
+    }
+  },
+  {
+    "pokemon": {
+      "nombre": "Pikachu",
+      "tipo_carta": "BASIC",
+      "hp": 60,
+      "tipo_energia_principal": "Eléctrico",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      "modelo": "src/models/pikachu2.0.glb"
+    },
+    "ataque_principal": {
+      "nombre": "Thunder Shock",
+      "danio": 50
+    }
+  },
+  {
+    "pokemon": {
+      "nombre": "Greninja",
+      "tipo_carta": "STAGE 2",
+      "hp": 130,
+      "tipo_energia_principal": "Agua",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/658.png",
+      "modelo": "src/models/greeninja.glb"
+    },
+    "ataque_principal": {
+      "nombre": "Water Shuriken",
+      "danio": 90
+    }
+  },
+  {
+    "pokemon": {
+      "nombre": "Lucario",
+      "tipo_carta": "BASIC",
+      "hp": 80,
+      "tipo_energia_principal": "Eléctrico",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png",
+      "modelo": "src/models/lucario2.0.glb"
+    },
+    "ataque_principal": {
+      "nombre": "Electro Kick",
+      "danio": 70
+    }
+  },
+  {
+    "pokemon": {
+      "nombre": "Mimikyu",
+      "tipo_carta": "BASIC",
+      "hp": 70,
+      "tipo_energia_principal": "Fantasma",
+      "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/778.png",
+      "modelo": "src/models/mimikyu.glb"
+    },
+    "ataque_principal": {
+      "nombre": "Shadow Hit",
+      "danio": 60
+    }
+  }
+]

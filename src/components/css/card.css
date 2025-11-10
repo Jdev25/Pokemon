@@ -1,0 +1,141 @@
+:root {
+  --card-height: 300px;
+  --card-width: 200px;
+  --aura1: #ffcc00;
+  --aura2: #ff0066;
+  --aura3: #6e00ff;
+}
+
+/* Carta */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+  animation: floatCard 3s ease-in-out infinite alternate;
+  margin: 1rem;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Posterior */
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  background-image: url("../src/img/posterior.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Frente */
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card.flipped .card-front {
+  opacity: 1;
+}
+
+/* Imagen */
+.card-front .card-image {
+  width: 100%;
+  height: 65%;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid rgba(255, 212, 59, 0.3);
+}
+
+/* Información */
+.card-info h2 {
+  color: #ffd43b;
+  text-shadow: 0 0 10px rgba(255, 212, 59, 0.6);
+  font-size: 1.2rem;
+  margin-bottom: 0.rem;
+}
+
+.card-info p {
+  color: #f0f0f0;
+  font-size: 0.80rem;
+  line-height: 1.2;
+  padding: 0.15rem;
+}
+
+/* Aura animada */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(132deg, var(--aura1), var(--aura2), var(--aura3));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card.flipped::before {
+  opacity: 1;
+  animation: spin 3s linear infinite;
+}
+
+/* Animaciones */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px) rotateZ(-2deg); }
+  100% { transform: translateY(0px) rotateZ(2deg); }
+}
+
+@keyframes spin {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Botón Invocar */
+.btn-invocar {
+  background: linear-gradient(90deg, #ffd43b, #ff9900);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 0rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  opacity: 0.9,
+}
+
+.btn-invocar:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffea7f, #ffc94b);
+}
+
+

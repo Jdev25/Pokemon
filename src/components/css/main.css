@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1d1f27, #2d2f3a, #1a1c23);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* NAvBar superior  */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFD43B;
+  text-shadow: 0 0 10px rgba(255, 212, 59, 0.6);
+}
+
+model-viewer {
+  width: 100%;
+  height: 100vh;
+  --poster-color: transparent;
+}
+
+.info {
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+  text-align: left;
+  max-width: 450px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 25px 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.info h2 {
+  font-size: 1.8rem;
+  color: #FFD43B;
+  margin-bottom: 12px;
+}
+
+.info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f2f2f2;
+  text-align: justify;
+}
+
+/* === Ajustes para texto responsivo === */
+.info p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .info {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 18px;
+    max-width: none;
+  }
+
+  .info h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .info p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
+
+/* === Animaciones === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.5rem; }
+  .info {
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+    max-width: none;
+    padding: 20px;
+  }
+  .info h2 { font-size: 1.4rem; }
+  .info p { font-size: 0.9rem; }
+}
+
+
+/* === Contenedor del botón === */
+.btn-container.pd-50px {
+  position: fixed; /* se mantiene en la esquina aunque hagas scroll */
+  bottom: 30px;
+  right: 50px;
+}
+
+/* === Estilo del botón === */
+.btn-jugar {
+  display: inline-block;
+  padding: 15px 36px;
+  background: rgba(0, 0, 0, 0.45); /* fondo translúcido */
+  border: 2px solid rgba(255, 212, 59, 0.7); /* borde dorado */
+  border-radius: 30px;
+  backdrop-filter: blur(6px); /* desenfoque de fondo */
+  color: #FFD43B; /* texto dorado */
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 212, 59, 0.4);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  cursor: pointer;
+}
+
+/* === Efecto hover: resplandor más fuerte === */
+.btn-jugar:hover {
+  background: rgba(255, 212, 59, 0.15);
+  box-shadow: 0 0 25px rgba(255, 212, 59, 0.8);
+  transform: scale(1.05);
+}
+
+/* === Efecto de brillo pulsante === */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 212, 59, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 212, 59, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 212, 59, 0.5);
+  }
+}
+
+/* === Responsive: tamaño ajustado en móvil === */
+@media (max-width: 768px) {
+  .btn-jugar {
+    padding: 12px 22px;
+    font-size: 1.4rem;
+  }
+
+  .btn-container.pd-50px {
+    bottom: 20px;
+    right: 20px;
+  }
+}
